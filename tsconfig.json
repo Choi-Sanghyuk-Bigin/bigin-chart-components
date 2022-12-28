@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "types": ["@emotion/react/types/css-prop"],
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "dist",
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "lib": ["es2015", "esnext.asynciterable", "dom", "esnext"],
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": false,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "example"]
+}

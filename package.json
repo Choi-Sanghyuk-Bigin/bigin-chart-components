@@ -1,0 +1,195 @@
+{
+  "name": "@bigin/bigin-ui-components",
+  "version": "1.2.3",
+  "description": "for bigin solutions",
+  "author": "bigin",
+  "license": "biginsight",
+  "repository": "https://bitbucket.org/applicatTeam/bigin-ui-components/src/master/",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "registry": "https://npm.dev.bigin.io/"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6060 -s public",
+    "build-storybook": "build-storybook -s public",
+    "make-assets": "mkdirp ./dist/assets/img ./dist/assets/fonts",
+    "copy-assets": "cp src/assets/img/* ./dist/assets/img && cp src/assets/fonts/* ./dist/assets/fonts",
+    "build": "rm -rf ./dist && tsc && yarn make-assets && yarn copy-assets",
+    "deploy": "yarn build && yarn publish"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@emotion/babel-plugin": "^11.7.2",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@storybook/addon-actions": "6.3.12",
+    "@storybook/addon-essentials": "6.3.12",
+    "@storybook/addon-knobs": "6.3.1",
+    "@storybook/addon-links": "6.3.12",
+    "@storybook/addons": "6.3.12",
+    "@storybook/node-logger": "6.3.12",
+    "@storybook/preset-create-react-app": "3.1.5",
+    "@storybook/react": "6.3.12",
+    "@storybook/theming": "6.3.12",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/d3": "6.2.0",
+    "@types/d3-axis": "2.0.0",
+    "@types/d3-selection": "2.0.0",
+    "@types/jest": "^25.1.4",
+    "@types/lodash": "4.14.178",
+    "@types/node": "^12.12.38",
+    "@types/react": "^16.9.27",
+    "@types/react-dom": "^16.9.7",
+    "@typescript-eslint/eslint-plugin": "4.14.1",
+    "@typescript-eslint/parser": "4.14.1",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.2.3",
+    "classnames": "2.2.6",
+    "cross-env": "^7.0.2",
+    "d3": "6.3.1",
+    "d3-color": "2.0.0",
+    "eslint": "7.18.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-typescript": "12.0.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-config-react-app": "6.0.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-import-resolver-typescript": "2.3.0",
+    "eslint-loader": "4.0.2",
+    "eslint-plugin-flowtype": "5.2.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.2.0",
+    "html-react-parser": "1.2.6",
+    "microbundle-crl": "^0.13.10",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.4",
+    "prettier-eslint": "12.0.0",
+    "prettier-eslint-cli": "5.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-infinite-scroll-component": "6.1.0",
+    "react-loading-skeleton": "^2.2.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.0",
+    "storybook-dark-mode": "1.0.8",
+    "tsconfig-paths-webpack-plugin": "3.5.2",
+    "typescript": "4.1.3"
+  },
+  "dependencies": {
+    "@emotion/react": "11.7.1",
+    "@emotion/styled": "11.8.0",
+    "@material-ui/core": "4.12.3",
+    "moment": "2.29.1"
+  },
+  "files": [
+    "dist/**/*",
+    "dist/**/fonts/**/*",
+    "src/assets/img/*"
+  ],
+  "eslintConfig": {
+    "plugins": [
+      "@typescript-eslint",
+      "react-hooks",
+      "prettier"
+    ],
+    "extends": [
+      "airbnb",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "prettier",
+      "prettier/react"
+    ],
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "no-use-before-define": "off",
+      "prettier/prettier": "error",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
+      "import/no-extraneous-dependencies": "off",
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
+        }
+      ],
+      "@typescript-eslint/no-use-before-define": [
+        "error"
+      ],
+      "@typescript-eslint/no-shadow": "error",
+      "react/no-unused-prop-types": "off",
+      "react/jsx-key": "off",
+      "react/jsx-no-bind": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/no-static-element-interactions": "off",
+      "import/prefer-default-export": "off",
+      "@typescript-eslint/ban-types": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/no-this-alias": "off",
+      "react/no-this-in-sfc": "off",
+      "react/destructuring-assignment": "off",
+      "camelcase": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/require-default-props":"off",
+      "no-shadow": "off",
+      "react/jsx-fragments": [
+        "error",
+        "element"
+      ],
+      "no-underscore-dangle": "off"
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
+        }
+      }
+    }
+  },
+  "eslintIgnore": [
+    "templates/component/*"
+  ]
+}
